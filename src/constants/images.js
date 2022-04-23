@@ -23,6 +23,7 @@ import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logobl from '../assets/logobl.svg';
 import logo from '../assets/logo.png';
+import banner from '../assets/banner.png';
 
 export default {
   email,
@@ -48,4 +49,5 @@ export default {
   circle,
   logobl,
   logo,
+  banner,
 };
