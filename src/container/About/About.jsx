@@ -1,39 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import { images } from '../../constants';
+import { urlFor, client } from '../../client';
 import './About.scss';
 
-const abouts = [
-  {
-    title: 'Web Designer',
-    description:
-      'Sou um web designer apaixonado por criar aplicativos elegantes e funcionais.',
-    imgUrl: images.about01,
-  },
-  {
-    title: 'Front-End',
-    description:
-      'Desenvolvimento de websites, landing pages, Single Page Applications utilizando HTML, CSS, Javascript e bibliotecas, ferramentas & frameworks como Figma, ReactJS, NextJS, TailwindCSS, MUI5, Chakra-UI, entre outros.',
-    imgUrl: images.about02,
-  },
-  {
-    title: 'Back-End',
-    description:
-      'Desenvolvimento de APIs REST ou GraphQL utilizando a tecnologia Node.js em conjunto com frameworks Express e Nest, ORMs como Prisma e TypeORM, contêineres Docker, bancos de dados relacionais MySQL, Postgres e SQL Server e também bancos de dados NoSQL como MongoDB e Redis.',
-    imgUrl: images.about03,
-  },
-  {
-    title: 'Mobile',
-    description:
-      'Desenvolvimento de aplicativos nativos para os sistemas Android e IOS utilizando a biblioteca Javascript React Native com a própria CLI ou com a ferramenta Expo.',
-    imgUrl: images.about04,
-  },
-];
-
 const About = () => {
+  const [abouts, setAbouts] = useState([]);
+  console.log(abouts);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+
+    client.fetch(query).then((data) => {
+      setAbouts(data);
+    });
+  }, []);
+
   return (
-    <>
+    <div id="about">
       <h2 className="head-text">
         Eu sei que <span>bom software</span>
         <br />
@@ -49,7 +33,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
             </h2>
@@ -59,7 +43,7 @@ const About = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

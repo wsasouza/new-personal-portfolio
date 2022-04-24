@@ -3,7 +3,7 @@
   background: url('../../assets/bgIMG.png');
   background-size: cover;
   background-repeat: repeat;
-  background-position: center;
+  background-position: center;  
 
   .app__wrapper {
     padding: 0;
@@ -199,7 +199,7 @@
     z-index: 1;    
   }
 
-  .overlay_circle {
+  .overlay_circle {    
     position: absolute;
     left: 0;
     right: 0;
@@ -215,6 +215,6 @@
     img {
       width: 20rem;
       height: 20rem;
-    }
+    }    
   }
 }
