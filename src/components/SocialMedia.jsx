@@ -5,25 +5,50 @@ import {
   FaRegEnvelope,
   FaWhatsapp,
 } from 'react-icons/fa';
+import Mailto from './Mailto';
 
 const SocialMedia = () => {
   return (
-    <div>
+    <>
       <div className="app__social">
         <div>
-          <FaGithub />
+          <a
+            href="https://github.com/wsasouza"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub />
+          </a>
         </div>
         <div>
-          <FaLinkedinIn />
+          <a
+            href="https://www.linkedin.com/in/waltersasouza/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedinIn />
+          </a>
         </div>
         <div>
-          <FaRegEnvelope />
+          <Mailto
+            email="wsasouza@hotmail.com"
+            subject="Contato via Portfólio"
+            body="Olá Walter, tudo bem?"
+          >
+            <FaRegEnvelope />
+          </Mailto>
         </div>
         <div>
-          <FaWhatsapp />
+          <a
+            href="https://api.whatsapp.com/send?phone=5516999871407"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp />
+          </a>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

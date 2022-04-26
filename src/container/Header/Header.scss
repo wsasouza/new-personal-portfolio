@@ -58,9 +58,16 @@
   align-items: flex-end;
   flex-direction: column;
 
-  .badge-cmp, .tag-cmp {
-    padding: 1rem 2rem;
+  .badge-cmp {
     background: var(--white-color);
+  }
+
+  .tag-cmp {
+    background: var(--secondary-color);
+  }
+
+  .badge-cmp, .tag-cmp {
+    padding: 1rem 2rem;    
     border-radius: 15px;
     flex-direction: row;
     width: auto;
